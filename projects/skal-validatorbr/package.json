@@ -1,0 +1,14 @@
+{
+  "name": "skal-validatorbr",
+  "description": "",
+  "version": "0.0.2",
+  "peerDependencies": {
+    "@angular/common": "^14.1.0",
+    "@angular/core": "^14.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "url" : "https://github.com/jdmarvin7",
+  "email" : "jdmarvinmaeldestin02@gmail.com"
+}

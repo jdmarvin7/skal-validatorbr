@@ -3,5 +3,39 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "skal-validatorbr": {
+      "projectType": "library",
+      "root": "projects/skal-validatorbr",
+      "sourceRoot": "projects/skal-validatorbr/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/skal-validatorbr/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/skal-validatorbr/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/skal-validatorbr/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/skal-validatorbr/src/test.ts",
+            "tsConfig": "projects/skal-validatorbr/tsconfig.spec.json",
+            "karmaConfig": "projects/skal-validatorbr/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "4f633f3f-4881-426d-98da-4dbdae4fa660"
   }
 }
