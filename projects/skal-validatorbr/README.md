@@ -1,24 +1,30 @@
-# SkalValidatorbr
+# Skal - ValidatorBr
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+Pacote TypeScript(Angular) para validação de documentos br.
 
-## Code scaffolding
+#### Para instalar o pacote:
 
-Run `ng generate component component-name --project skal-validatorbr` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project skal-validatorbr`.
-> Note: Don't forget to add `--project skal-validatorbr` or else it will be added to the default project in your `angular.json` file. 
+    npm install skal-validatorbr
 
-## Build
+#### Como usar
 
-Run `ng build skal-validatorbr` to build the project. The build artifacts will be stored in the `dist/` directory.
+    1. Vamos adicionar o modulo
 
-## Publishing
+    import { SkalValidatorbrModule } from 'skal-validatorbr'
 
-After building your library with `ng build skal-validatorbr`, go to the dist folder `cd dist/skal-validatorbr` and run `npm publish`.
+    @NgModule({
+      imports: [
+        SkalValidatorbrModule,
+      ]
+    })
 
-## Running unit tests
+    2. Vamos adicionar a nossa diretiva no input que queremos validar [appCpfCnpjValidate].
 
-Run `ng test skal-validatorbr` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ex:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    <html>
+      <input formControlName="input" appCpfCnpjValidate/>
+      <div *ngIf="form.controls['input'].hasError('digit') && form.controls['input'].hasError('equalDigits')">
+        CPF ou CNPJ não válido.
+      </div>
+    </html>
