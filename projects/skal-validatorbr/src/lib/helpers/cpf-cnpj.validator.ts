@@ -31,7 +31,7 @@ export class CpfCnpjValidator implements Validator {
     // Verifica o tamanho da string.
     if (
       [CpfCnpjValidator.cpfLength, CpfCnpjValidator.cnpjLength].indexOf(
-        cpfCnpj.length
+        cpfCnpj?.length
       ) < 0
     ) {
       return { length: true };
@@ -43,10 +43,10 @@ export class CpfCnpjValidator implements Validator {
     }
 
     // A seguir é realizado o cálculo verificador.
-    const cpfCnpjArr: number[] = cpfCnpj.split('').reverse().slice(2);
+    const cpfCnpjArr: number[] = cpfCnpj?.split('').reverse().slice(2);
 
-    cpfCnpjArr.unshift(CpfCnpjValidator.buildDigit(cpfCnpjArr));
-    cpfCnpjArr.unshift(CpfCnpjValidator.buildDigit(cpfCnpjArr));
+    cpfCnpjArr?.unshift(CpfCnpjValidator.buildDigit(cpfCnpjArr));
+    cpfCnpjArr?.unshift(CpfCnpjValidator.buildDigit(cpfCnpjArr));
 
     if (cpfCnpj !== cpfCnpjArr.reverse().join('')) {
       // Dígito verificador não é válido, resultando em falha.
