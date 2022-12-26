@@ -3,7 +3,7 @@ import { Validator, NG_VALIDATORS } from '@angular/forms';
 import { CpfCnpjValidator } from './cpf-cnpj.validator';
 
 @Directive({
-  selector: '[skalValidadeCpfCnpj]',
+  selector: '[skalValidateCpfCnpj]',
   providers: [
     {
       provide: NG_VALIDATORS,
